@@ -1,4 +1,19 @@
 'use strict';
+import dice1 from './dice-1.png';
+import dice2 from './dice-2.png';
+import dice3 from './dice-3.png';
+import dice4 from './dice-4.png';
+import dice5 from './dice-5.png';
+import dice6 from './dice-6.png';
+
+const diceMap = {
+  1: dice1,
+  2: dice2,
+  3: dice3,
+  4: dice4,
+  5: dice5,
+  6: dice6,
+};
 
 // Selecting Elements
 const player0El = document.querySelector('.player--0');
@@ -55,7 +70,7 @@ btnRoll.addEventListener('click', function () {
 
     // 2. Display dice
     diceEl.classList.remove('hidden');
-    diceEl.src = `./dice-${dice}.png`;
+    diceEl.src = diceMap[dice];
 
     // 3. check for rolled 1: if true
     if (dice !== 1) {
